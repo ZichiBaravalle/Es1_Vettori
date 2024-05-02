@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Money</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body onload="init()">
+    <header>
+        <section>
+            <h1>MONEY MONEY</h1>
+            <h4>Dividi le spese tra gli amici</h4>
+        </section>
+        <section id="presentazione">
+            <button onclick="Login()">Login</button>
+        </section>
+    </header>
+    <main>
+        <section>
+            <fieldset>
+                <legend>Tutti i pagamenti</legend>
+                <main id="pagamentiConfermati">
+                    <article>
+                        <span>20<span>04/24</span></span>
+                        <div>Giacomo</div>
+                        <div class="uscita">30 €</div>
+                        <div>Negozio</div>
+                    </article>
+                    <article>
+                        <span>19<span>04/24</span></span>
+                        <div>Sara</div>
+                        <div class="entrata">5 €</div>
+                        <div>Giacomo</div>
+                    </article>
+                </main>
+            </fieldset>
+            <fieldset>
+                <legend>Pagamenti da confermare</legend>
+                <main id="pagamenti da confermare">
+                    <article onclick="confermaPagamento('Giacomo', this)">
+                        <span>20<span>04/24</span></span>
+                        <div>Giacomo</div>
+                        <div class="uscita">50 €</div>
+                        <div>Locale</div>
+                    </article>
+                </main>
+            </fieldset>
+        </section>
+        <fieldset>
+            <legend>Aggiungi un pagamento</legend>
+            <div>
+                Pagante:
+                <select id="pagante">
+                </select>
+            </div>
+            <div>
+                Pagato:
+                <select id="pagato">
+                </select>
+            </div>
+            <div>Importo:<input id="importo" type="number"></div>
+            <div>
+                Divisione del pagamento:
+                <ul>
+                    <li>Giacomo: <span id="importo1"></span></li>
+                    <li>Elisa: <span id="importo2"></span></li>
+                    <li>Sara: <span id="importo3"></span></li> 
+                    <li>Alessandro: <span id="importo4"></span></li>
+                </ul>
+                <button onclick="divisione()">Calcola divisione</button>
+            </div>
+            <button onclick="inserisciPagamento()">INSERISCI PAGAMENTO</button>
+        </fieldset>
+    </main>
+    <footer>
+        Creato da Zichi Baravalle
+    </footer>
+</body>
+</html>
